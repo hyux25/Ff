@@ -1,0 +1,77 @@
+/**
+*
+* @Name : CustomWebCheckbox
+* @Version : 1.0
+* @Programmer : Max
+* @Date : 2018-11-24
+* @Released under : https://github.com/BaseMax/CustomWebCheckbox/blob/master/LICENSE
+* @Repository : https://github.com/BaseMax/CustomWebCheckbox
+*
+**/
+/*
+body
+{
+    background-color: #E1FEFE;
+}
+*/
+.checkbox_container {
+  height: 30px;
+  line-height: 20px;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  margin-right: 15px;
+  padding-left: 35px;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  /* #Bug: Cross Browser */
+  user-select: none;
+  font-size: 0.9rem;
+}
+.checkbox_container .checkbox_mark {
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: #eeeeee;
+  /* #Bug: Cross Browser */
+  border-radius: 4px;
+}
+.checkbox_container:hover input ~ .checkbox_mark {
+  background-color: #cccccc;
+}
+.checkbox_container input:checked ~ .checkbox_mark {
+  background-color: rgb(246, 83, 252);
+}
+.checkbox_container input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+.checkbox_container .checkbox_mark:after {
+  display: none;
+  content: "";
+  /*
+    position: absolute;
+    */
+  position: relative;
+}
+.checkbox_container input:checked ~ .checkbox_mark:after {
+  display: block;
+}
+.checkbox_container .checkbox_mark:after {
+  width: 4px;
+  height: 10px;
+  top: 4.5px;
+  left: 9px;
+  border-style: solid;
+  border-color: white;
+  border-width: 0 3px 3px 0;
+  /* #Bug: Cross Browser */
+  /*
+    transform: rotate(405deg);
+    */
+  transform: rotate(45deg);
+}
